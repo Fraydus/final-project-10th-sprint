@@ -7,17 +7,18 @@
 #   dir3
 #       dir4
 
-mkdir task task/dir1 task/dir2 task/dir3 task/dir3/dir4
+mkdir task -p task/dir1 task/dir2 task/dir3/dir4
 # изменяем текущую директорию на task
 cd task
 # создаём пустой файл task/dir2/empty
-touch /task/dir2/empty
+touch dir2/empty
 # создаём файл task/dir2/hello.sh с таким содержанием:
 # #!/bin/bash
 # echo "$1, привет!"
-touch /task/dir2/hello.sh
+
+touch dir2/hello.sh
 echo '#!/bin/bash"
-echo "$1, привет!" >> /dir2/hello.sh'
+echo "$1, привет!" >> ./dir2/hello.sh'
 # устанавливаем для task/dir2/hello.sh права rwxrw-r--
 chmod 764 dir2/hello.sh
 # сохраняем список файлов task/dir2 в task/dir2/list.txt
